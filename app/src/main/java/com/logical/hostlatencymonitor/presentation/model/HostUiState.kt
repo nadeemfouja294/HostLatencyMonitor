@@ -1,7 +1,6 @@
 package com.logical.hostlatencymonitor.presentation.model
 
 sealed class HostUiState {
-    data object Loading : HostUiState()
 
     data class Success(
         val name: String,
@@ -10,7 +9,4 @@ sealed class HostUiState {
         val iconUrl: String
     ) : HostUiState()
 
-    data class Failure(
-        val errorMessage: String
-    ) : HostUiState()
 }

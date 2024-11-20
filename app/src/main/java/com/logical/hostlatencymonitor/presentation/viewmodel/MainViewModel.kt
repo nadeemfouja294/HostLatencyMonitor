@@ -5,7 +5,9 @@ import androidx.lifecycle.viewModelScope
 import com.logical.hostlatencymonitor.domain.model.Host
 import com.logical.hostlatencymonitor.domain.usecase.FetchHostsUseCase
 import com.logical.hostlatencymonitor.domain.usecase.PingHostUseCaseWrapper
-import com.logical.hostlatencymonitor.presentation.model.*
+import com.logical.hostlatencymonitor.presentation.model.PingState
+import com.logical.hostlatencymonitor.presentation.model.PresentationPingResult
+import com.logical.hostlatencymonitor.presentation.model.SortOption
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
@@ -23,7 +25,7 @@ class MainViewModel @Inject constructor(
     private val JsonUrl = "https://gist.githubusercontent.com/anonymous/290132e587b77155eebe44630fcd12cb/raw/777e85227d0c1c16e466475bb438e0807900155c/sk_hosts"
 
     private var hosts = emptyList<Host>()
-    private var currentSortOption = SortOption.NAME
+    private var currentSortOption = SortOption.LATENCY
     private val _pingState = MutableStateFlow<PingState>(PingState.Loading)
     val pingState: StateFlow<PingState> = _pingState
 
