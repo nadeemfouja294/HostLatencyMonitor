@@ -17,6 +17,9 @@ hilt = "2.52"
 gson = "2.10.1"
 mockito = "5.2.0"
 coroutinesTest = "1.7.3"
+mockito-kotlin = "5.1.0"
+truth = "1.1.5"
+turbine = "1.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -45,6 +48,9 @@ glide-compiler = { group = "com.github.bumptech.glide", name = "compiler", versi
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 mockito-core = { group = "org.mockito", name = "mockito-core", version.ref = "mockito" }
 coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutinesTest" }
+mockito-kotlin = { group = "org.mockito.kotlin", name = "mockito-kotlin", version.ref = "mockito-kotlin" }
+truth = { group = "com.google.truth", name = "truth", version.ref = "truth" }
+turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

@@ -54,7 +54,11 @@ dependencies {
     // Unit Testing
     testImplementation(libs.junit)
     testImplementation(libs.mockito.core)
-    testImplementation(libs.coroutines.test) // Coroutine testing utilities
+    testImplementation(libs.coroutines.test)
+    // Add these new dependencies
+    testImplementation(libs.mockito.kotlin)
+    testImplementation(libs.truth)
+    testImplementation(libs.turbine)
 
     // Instrumented Testing
     androidTestImplementation(libs.androidx.junit)
