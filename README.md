@@ -4,7 +4,7 @@ A modern Android application that monitors host latency by pinging multiple endp
 ## Features
 - Fetch hosts from JSON endpoint
 - Real-time latency monitoring by pinging each host 5 times
-- Show host name, average latency and associated image
+- Show host name, average latency, and associated image
 - Sort results by name and latency
 - Individual host retesting capability
 - Elegant loading and error states
@@ -42,6 +42,18 @@ The main application module that:
 - [Jetpack Compose](https://developer.android.com/jetpack/compose) for UI
 - Material Design 3
 - Coil for image loading
+
+## Testing
+Unit tests have been implemented to ensure reliability of core functionality:
+
+### PingLibrary Module
+- Validates ping operations, average latency calculations, and error handling.
+- Tests edge cases such as unreachable hosts, empty output, and malformed data.
+
+### Repository Layer
+- Ensures proper interaction between the data source and domain layer, including exception handling and data mapping.
+
+These tests ensure the robustness of the core business logic and provide confidence in the app's reliability.
 
 ## Demo
 <img align="centre" src="/demo.gif" width="360" height="640"/>
