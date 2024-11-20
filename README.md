@@ -43,5 +43,5 @@ The main application module that:
 - Material Design 3
 - Coil for image loading
 
-## Screenshots
+## Demo
 <img align="centre" src="/demo.gif" width="360" height="640"/>
