@@ -55,10 +55,10 @@ dependencies {
     testImplementation(libs.junit)
     testImplementation(libs.mockito.core)
     testImplementation(libs.coroutines.test)
-    // Add these new dependencies
     testImplementation(libs.mockito.kotlin)
     testImplementation(libs.truth)
     testImplementation(libs.turbine)
+    testImplementation (libs.mockk)
 
     // Instrumented Testing
     androidTestImplementation(libs.androidx.junit)
