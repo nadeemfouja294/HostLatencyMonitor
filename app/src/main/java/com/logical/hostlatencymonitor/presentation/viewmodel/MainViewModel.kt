@@ -2,6 +2,7 @@ package com.logical.hostlatencymonitor.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.logical.hostlatencymonitor.BuildConfig
 import com.logical.hostlatencymonitor.domain.model.Host
 import com.logical.hostlatencymonitor.domain.usecase.FetchHostsUseCase
 import com.logical.hostlatencymonitor.domain.usecase.PingHostUseCaseWrapper
@@ -22,8 +23,6 @@ class MainViewModel @Inject constructor(
     private val fetchHostsUseCase: FetchHostsUseCase,
     private val pingHostUseCase: PingHostUseCaseWrapper
 ) : ViewModel() {
-    private val JsonUrl = "https://gist.githubusercontent.com/anonymous/290132e587b77155eebe44630fcd12cb/raw/777e85227d0c1c16e466475bb438e0807900155c/sk_hosts"
-
     private var hosts = emptyList<Host>()
     private var currentSortOption = SortOption.LATENCY
     private val _pingState = MutableStateFlow<PingState>(PingState.Loading)
@@ -53,7 +52,7 @@ class MainViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 _pingState.value = PingState.Loading
-                hosts = fetchHostsUseCase(JsonUrl).getOrThrow()
+                hosts = fetchHostsUseCase(BuildConfig.HOSTS_API_URL).getOrThrow()
 
                 val pingJobs = hosts.map { host ->
                     async(Dispatchers.IO) {
